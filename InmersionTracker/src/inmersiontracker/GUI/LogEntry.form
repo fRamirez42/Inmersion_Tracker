@@ -16,13 +16,86 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ActivityComboBox_LE" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                          <Component id="Duration_LE" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="429" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="ActivityComboBox_LE" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="Duration_LE" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace pref="138" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="48" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Log Entry"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Activity Done"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="ActivityComboBox_LE">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Listening"/>
+            <StringItem index="1" value="Watching"/>
+            <StringItem index="2" value="Reading"/>
+            <StringItem index="3" value="Grammar"/>
+            <StringItem index="4" value="Class"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Duration (Minutes)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="Duration_LE">
+    </Component>
+  </SubComponents>
 </Form>

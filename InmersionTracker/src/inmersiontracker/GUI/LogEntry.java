@@ -26,19 +26,64 @@ public class LogEntry extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ActivityComboBox_LE = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        Duration_LE = new javax.swing.JTextField();
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setText("Log Entry");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setText("Activity Done");
+
+        ActivityComboBox_LE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Listening", "Watching", "Reading", "Grammar", "Class" }));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Duration (Minutes)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(ActivityComboBox_LE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Duration_LE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(56, 56, 56)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ActivityComboBox_LE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Duration_LE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ActivityComboBox_LE;
+    private javax.swing.JTextField Duration_LE;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
