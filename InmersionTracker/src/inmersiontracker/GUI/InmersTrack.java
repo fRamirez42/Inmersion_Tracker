@@ -6,12 +6,14 @@ package inmersiontracker.GUI;
 
 import inmersiontracker.Code.LogEntry;
 import inmersiontracker.Code.MyArrayList;
+import javax.swing.DefaultListModel;
 
 /**
  *
  * @author felip
  */
 public class InmersTrack extends javax.swing.JFrame {
+    MyArrayList list = new MyArrayList();
 
     /**
      * Creates new form InmersTrack
@@ -49,6 +51,8 @@ public class InmersTrack extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         LogTimeButton_GV = new javax.swing.JToggleButton();
         StatsButton_GV = new javax.swing.JButton();
+        TodaysList = new javax.swing.JScrollPane();
+        TodayList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -207,6 +211,8 @@ public class InmersTrack extends javax.swing.JFrame {
 
         StatsButton_GV.setText("Stats");
 
+        TodaysList.setViewportView(TodayList);
+
         javax.swing.GroupLayout General_ViewLayout = new javax.swing.GroupLayout(General_View);
         General_View.setLayout(General_ViewLayout);
         General_ViewLayout.setHorizontalGroup(
@@ -221,7 +227,9 @@ public class InmersTrack extends javax.swing.JFrame {
                         .addGroup(General_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(LogTimeButton_GV, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                             .addComponent(StatsButton_GV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(TodaysList, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
         );
         General_ViewLayout.setVerticalGroup(
             General_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +241,10 @@ public class InmersTrack extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addComponent(StatsButton_GV, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, General_ViewLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TodaysList, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         Background.add(General_View, "card4");
@@ -258,6 +270,19 @@ public class InmersTrack extends javax.swing.JFrame {
     private void btn_main_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_menuActionPerformed
         LandingPage.setVisible(false);
         General_View.setVisible(true);
+        DefaultListModel DLM = new DefaultListModel();
+        
+        if(list.isEmpty() == true){     
+            DLM.addElement("No Entry's today, Log Somthing!");
+            TodayList.setModel(DLM);
+        } else{
+            int i = 0;
+            while(list.get(i) != null){
+                DLM.addElement(list.get(i));
+                i++;
+            }
+            TodayList.setModel(DLM);
+        }
     }//GEN-LAST:event_btn_main_menuActionPerformed
 
     private void LogTimeButton_GVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogTimeButton_GVActionPerformed
@@ -267,18 +292,11 @@ public class InmersTrack extends javax.swing.JFrame {
 
     private void LogEntryButton_LEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogEntryButton_LEActionPerformed
         try{
-            MyArrayList list = new MyArrayList();
-
+            
             String act = ActivityComboBox_LE.getSelectedItem().toString();
             String minutes = Duration_LE.getText();
             int mins = Integer.parseInt(minutes);
 
-            //        try{
-                //            int mins = Integer.parseInt(minutes);
-                //        } catch(Exception e){
-                //            //Do sum
-                //        }
-            //
             String desc = Description_LE.getText();
 
             LogEntry Entry = new LogEntry(mins, desc, act);
@@ -290,6 +308,19 @@ public class InmersTrack extends javax.swing.JFrame {
 
             LogEntry.setVisible(false);
             General_View.setVisible(true);
+            DefaultListModel DLM = new DefaultListModel();
+        
+            if(list.isEmpty()){     
+                DLM.addElement("No Entry's today, Log Somthing!");
+                TodayList.setModel(DLM);
+            } else{
+                int i = 0;
+                while(list.get(i) != null){
+                    DLM.addElement(list.get(i));
+                    i++;
+                }
+                TodayList.setModel(DLM);
+            }
         }catch(Exception e){
             Success_LE.setText("Log Entry failed! " + e);
         }
@@ -344,6 +375,8 @@ public class InmersTrack extends javax.swing.JFrame {
     private javax.swing.JToggleButton LogTimeButton_GV;
     private javax.swing.JButton StatsButton_GV;
     private javax.swing.JLabel Success_LE;
+    private javax.swing.JList<String> TodayList;
+    private javax.swing.JScrollPane TodaysList;
     private javax.swing.JLabel Welcome_text;
     private javax.swing.JButton btn_main_menu;
     private javax.swing.JLabel jLabel1;
