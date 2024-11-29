@@ -277,7 +277,7 @@ public class InmersTrack extends javax.swing.JFrame {
             TodayList.setModel(DLM);
         } else{
             int i = 0;
-            while(list.get(i) != null){
+            while(list.hasNext() == true){
                 DLM.addElement(list.get(i));
                 i++;
             }

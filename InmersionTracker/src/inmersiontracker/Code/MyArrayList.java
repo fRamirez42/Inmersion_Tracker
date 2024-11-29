@@ -14,6 +14,7 @@ public class MyArrayList {
     private Object[] elements; // Array to store elements
     private int size = 0;      // Number of elements in the list
     private static final int DEFAULT_CAPACITY = 10; // Default initial capacity
+    private int currentIndex = 0; // Index to track the current position
 
     // Constructor with default capacity
     public MyArrayList() {
@@ -73,6 +74,19 @@ public class MyArrayList {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
+    
+    // Custom method to check if there is a next element
+    public boolean hasNext() {
+        return currentIndex < size;
+    }
+
+    // Custom method to return the next element in the list
+    public Object next() {
+        if (!hasNext()) {
+            throw new IndexOutOfBoundsException("No more elements in the list.");
+        }
+        return elements[currentIndex++];
+    }   
 
     // Override toString for better visualization
     @Override
