@@ -9,11 +9,11 @@ package inmersiontracker.Code;
  * @author felip
  */
 public class LogEntry {
-    private double hours;
-    private String description;
-    private String activity;
+    public int hours;
+    public String description;
+    public String activity;
 
-    public LogEntry(double hours, String description, String act) {
+    public LogEntry(int hours, String description, String act) {
         this.hours = hours;
         this.description = description;
         this.activity = act;
@@ -24,7 +24,7 @@ public class LogEntry {
         return hours + " hours - " + description;
     }
     
-    public void setHours(double hours) {
+    public void setHours(int hours) {
         this.hours = hours;
     }
 
