@@ -10,8 +10,8 @@ package inmersiontracker.Code;
  */
 import java.util.Arrays;
 
-public class MyArrayList<T> {
-    private Object[] elements; // Array to hold elements
+public class MyArrayList {
+    private Object[] elements; // Array to store elements
     private int size = 0;      // Number of elements in the list
     private static final int DEFAULT_CAPACITY = 10; // Default initial capacity
 
@@ -29,21 +29,21 @@ public class MyArrayList<T> {
     }
 
     // Add an element to the list
-    public void add(T element) {
+    public void add(Object element) {
         ensureCapacity();
         elements[size++] = element;
     }
 
     // Get an element at a specific index
-    public T get(int index) {
+    public Object get(int index) {
         checkIndex(index);
-        return (T) elements[index];
+        return elements[index];
     }
 
     // Remove an element at a specific index
-    public T remove(int index) {
+    public Object remove(int index) {
         checkIndex(index);
-        T removedElement = (T) elements[index];
+        Object removedElement = elements[index];
         // Shift elements to fill the gap
         System.arraycopy(elements, index + 1, elements, index, size - index - 1);
         elements[--size] = null; // Avoid memory leak
@@ -80,4 +80,3 @@ public class MyArrayList<T> {
         return Arrays.toString(Arrays.copyOf(elements, size));
     }
 }
-

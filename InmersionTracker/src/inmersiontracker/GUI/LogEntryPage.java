@@ -5,6 +5,7 @@
 package inmersiontracker.GUI;
 
 import inmersiontracker.Code.LogEntry;
+import inmersiontracker.Code.MyArrayList;
 
 /**
  *
@@ -110,6 +111,8 @@ public class LogEntryPage extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogEntryButton_LEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogEntryButton_LEActionPerformed
+        MyArrayList list = new MyArrayList();
+
         String act = ActivityComboBox_LE.getSelectedItem().toString();
         String minutes = Duration_LE.getText();
         int mins = Integer.parseInt(minutes);
@@ -122,7 +125,9 @@ public class LogEntryPage extends javax.swing.JPanel {
 //        
         String desc = Description_LE.getText();
         
-        LogEntry add = new LogEntry(mins, desc, act);
+        LogEntry Entry = new LogEntry(mins, desc, act);
+        
+        list.add(Entry);
     }//GEN-LAST:event_LogEntryButton_LEActionPerformed
 
 
