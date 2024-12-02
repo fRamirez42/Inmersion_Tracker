@@ -23,9 +23,9 @@ public class DateArrayListMap {
     }
 
     // Method to add an element to the ArrayList for a specific date
-    public void addElement(Date date, String element) {
+    public void addElement(Date date, ArrayList element) {
         map.putIfAbsent(date, new ArrayList<>());
-        map.get(date).add(element);
+//        map.get(date).add(element);
     }
 
     // Method to retrieve the ArrayList for a specific date

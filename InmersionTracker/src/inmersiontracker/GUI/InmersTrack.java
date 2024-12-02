@@ -4,8 +4,12 @@
  */
 package inmersiontracker.GUI;
 
+import inmersiontracker.Code.DateArrayListMap;
 import inmersiontracker.Code.LogEntry;
 import inmersiontracker.Code.MyArrayList;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 
 /**
@@ -14,6 +18,7 @@ import javax.swing.DefaultListModel;
  */
 public class InmersTrack extends javax.swing.JFrame {
     MyArrayList list = new MyArrayList();
+    DateArrayListMap map = new DateArrayListMap();
 
     /**
      * Creates new form InmersTrack
@@ -268,6 +273,11 @@ public class InmersTrack extends javax.swing.JFrame {
     }//GEN-LAST:event_Language_SelectionActionPerformed
 
     private void btn_main_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_menuActionPerformed
+        Date today = new Date();
+
+            
+        map.addElement(today, list);
+        
         LandingPage.setVisible(false);
         General_View.setVisible(true);
         DefaultListModel DLM = new DefaultListModel();
